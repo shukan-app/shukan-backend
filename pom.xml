@@ -71,6 +71,12 @@
             <artifactId>guava</artifactId>
             <version>33.6.0-jre</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-logging-logback</artifactId>
+            <version>0.140.0-alpha</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -84,7 +90,7 @@
                     <compilerArgs>
                         <arg>-XDcompilePolicy=simple</arg>
                         <arg>--should-stop=ifError=FLOW</arg>
-                        <arg>-Xplugin:ErrorProne</arg>
+                        <arg>-Xplugin:ErrorProne -XepOpt:NullAway:AnnotatedPackages=dev.shoheiyamagiwa.shukan</arg>
                     </compilerArgs>
                     <annotationProcessorPaths>
                         <path>
